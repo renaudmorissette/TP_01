@@ -77,3 +77,11 @@ print()
 print("#3.a\n")
 
 matrice = {(0, 0): -1, (0, 2): 3, (1, 1): -2, (2, 0): 4, (2, 2): 5}
+
+valeur_neg = {key: value for key, value in matrice.items() if value < 0}
+print(valeur_neg)
+print()
+
+#3.b
+print("#3.b\n")
+
