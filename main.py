@@ -8,9 +8,9 @@ print("#1\n")
 
 
 def racines_communes(racine1, racine2):
-    racines_non_communes = racines1.symmetric_difference(racines2)
-    racines_union = racines1.union(racines2)
-    racines_communes_paires = {x for x in racines1.intersection(racines2) if x % 2 == 0}
+    racines_non_communes = racine1.symmetric_difference(racine2)
+    racines_union = racine1.union(racine2)
+    racines_communes_paires = {x for x in racine1.intersection(racine2) if x % 2 == 0}
 
     return racines_non_communes, racines_union, racines_communes_paires
 
@@ -85,3 +85,36 @@ print()
 #3.b
 print("#3.b\n")
 
+lignes_non_vides = {i for i, j in matrice.keys()}
+print(lignes_non_vides)
+print()
+
+#3.c
+print("#3.c\n")
+
+positions_impaires = list(filter(lambda k: matrice[k] % 2 != 0, matrice.keys()))
+print(positions_impaires)
+print()
+
+#4.a
+print("#4.a\n")
+etudiants = [ ('Alice', 18, (17, 15, 16)), ('Bob', 19, (12, 14, 11)), ('Charlie', 18, (15, 18, 14)), ('David', 20,
+(9, 11, 10))]
+
+moyenne_etudiant = lambda notes: sum(notes) / len(notes)
+print(moyenne_etudiant(etudiants[0][2]))
+print()
+
+#4.b
+print("#4.b\n")
+
+dict_moyenne = {nom: moyenne_etudiant(notes) for nom, _, notes in etudiants}
+print(dict_moyenne)
+print()
+
+#4.c
+print("#4.c\n")
+
+etudiants_moyenne_math = list(filter(lambda etudiant: etudiant[2][0] >= 10, etudiants))
+print(etudiants_moyenne_math)
+print()
